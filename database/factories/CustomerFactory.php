@@ -18,7 +18,7 @@ class CustomerFactory extends Factory
     {
         $type = $this->faker->randomElement(['P' , 'C']);
         $name = $type == 'P' ? $this->faker->name() : $this->faker->company();
-        
+
         return [
             'name' => $name,
             'type' => $type,
