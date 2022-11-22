@@ -10,7 +10,8 @@ class Register extends Model
     use HasFactory;
 
     protected $fillable = [
-        'username',
+//        'username',
+        'name',
         'email',
         'password',
     ];

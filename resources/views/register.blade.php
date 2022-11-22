@@ -7,10 +7,12 @@
             <title>Register</title>
         </head>
         <body>
-            <form action="/register" method="POST">
+            <form action="/auth/register" method="POST">
                 @csrf
-                <label for="username">Username</label>
-                <input type="text" name="username" placeholder="Type your username">
+{{--                <label for="username">Username</label>--}}
+{{--                <input type="text" name="username" placeholder="Type your username">--}}
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="Type your username">
 
 
                 <label for="email">Email</label>

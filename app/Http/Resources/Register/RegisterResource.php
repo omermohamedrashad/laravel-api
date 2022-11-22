@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Register;
 
+use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class RegisterResource extends JsonResource
@@ -15,10 +16,12 @@ class RegisterResource extends JsonResource
     public function toArray($request)
     {
         return [
-        'id' => $this->id,
-        'username' => $this->username,
-        'email' => $this->email,
-        'password' => $this->password,
+            'id' => $this->id,
+    //        'username' => $this->username,
+            'name' => $this->name,
+            'email' => $this->email,
+            'password' => $this->password,
+            'token' => $this::createToken("API TOKEN")->plainTextToken
         ];
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('register', [RegisterController::class, 'create']);
-Route::post('register', [RegisterController::class, 'store']);
+Route::group(['prefix' => 'auth'],function (){
+    Route::get('register', [RegisterController::class, 'create']);
+    Route::post('register', [RegisterController::class, 'store']);
+//    Route::get('login', [RegisterController::class, 'create']);
+    Route::post('login', [RegisterController::class, 'loginUser']);
+})->middleware('auth:sanctum');
