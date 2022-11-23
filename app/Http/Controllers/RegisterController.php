@@ -50,16 +50,17 @@ class RegisterController extends Controller
 
     }
 
-//    /**
-//     * Display the specified resource.
-//     *
-//     * @param  \App\Models\Register  $register
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function show(Register $register)
-//    {
-//        //
-//    }
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Register  $register
+     * @return RegisterResource|\Illuminate\Http\Response
+     */
+    public function show(Register $register)
+    {
+        return new RegisterResource($register);
+
+    }
 
 
 //    /**

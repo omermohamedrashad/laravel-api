@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Register;
+namespace App\Http\Resources;
 
-use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class RegisterResource extends JsonResource
+class UserResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -19,8 +18,10 @@ class RegisterResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'email' => $this->email,
-            'password' => $this->password,
-            'token' => $this::createToken("API TOKEN")->plainTextToken
-        ];
+            'email_verified_at' => $this->email_verified_at,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
+            'token' => $this->createToken("API TOKEN")->plainTextToken
+            ];
     }
 }
